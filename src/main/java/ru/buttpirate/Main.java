@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String cookie = "Paste cookie here";
+        String rawCookie = FileService.readFileContent("./cookies.txt");
 
         String[] links = {
 
@@ -23,7 +23,7 @@ public class Main {
 
             if (link.startsWith("https://vk.com/video")) {
                 System.out.println("INFO: link <"+link+"> was detected as VK video!");
-                VKScrapper.saveVKVideo(link, cookie);
+                VKScrapper.saveVKVideo(link, rawCookie);
             } else {
                 System.out.println("ERROR: Unknown link format: <"+link+">!");
             }
