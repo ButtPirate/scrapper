@@ -18,4 +18,8 @@ public class FileService {
 
     }
 
+    public static String[] parseLinkLines(String rawLinkFileContent) {
+        return rawLinkFileContent.split("\\n");
+    }
+
 }
