@@ -14,7 +14,7 @@ public class FileService {
     }
 
     public static String readFileContent(String path) throws IOException {
-        return FileUtils.readFileToString(new File(path), Charset.defaultCharset());
+        return FileUtils.readFileToString(new File(path), "UTF-8");
 
     }
 
