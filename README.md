@@ -10,7 +10,7 @@ Small scrapper for my personal needs
 * Create file `links.txt` in the same folder as downloaded .jar file
 * Paste any supported links to file `links.txt`. One link on one line, no separators. See section below for all supported link formats
 * Optional: if resource needs authorization to make request, create file `cookies.txt` in the same folder and paste cookie from your browser. See section below for guidance
-* Run app by double clicking .jar file or by typing `java -jar scrapper-{version}`.jar
+* Open console, navigate to folder containing .jar and type `java -jar scrapper_{version}.jar`
 
 ### **COOKIE FORMATS**
 Don't add header name e.g `Cookie: ...`, just paste cookie body from browser
