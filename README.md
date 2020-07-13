@@ -1,26 +1,31 @@
-Shitty scrapper for my personal needs
+Small scrapper for my personal needs
 
-**CAPABILITIES**
-* Download video from VK in highest available resolution
-* If a video is an embedded Youtube video - print link to console
+### **CAPABILITIES**
+* [VK](https://www.vk.com): Download video from VK in highest available resolution
+* [VK](https://www.vk.com): If a video is an embedded Youtube video - print YT link to console
+* [itch.io](https://itch.io): Claim all games from bundle to your account
 
-**USAGE**
-* Paste an array of links to variable links in `Main.java`
-* Run `Main.java` from IDE or console.
+### **USAGE**
+* Download latest version from [release page](https://github.com/ButtPirate/scrapper/releases)
+* Create file `links.txt` in the same folder as downloaded .jar file
+* Paste any supported links to file `links.txt`. One link on one line, no separators. See section below for all supported link formats
+* Optional: if resource needs authorization to make request, create file `cookies.txt` in the same folder and paste cookie from your browser. See section below for guidance
+* Run app by double clicking .jar file or by typing `java -jar scrapper-{version}`.jar
 
-**ADD AUTH**
+### **COOKIE FORMATS**
+Don't add header name e.g `Cookie: ...`, just paste cookie body from browser
+##### *VK*
+ 
+````remixlang=3; remixstid=...; remixflash=0.0.0; remixscreen_width=1280; remixscreen_height=720; remixscreen_dpr=2.5; remixscreen_depth=24; remixscreen_orient=1; remixscreen_winzoom=1; remixrt=1; remixgp=...; remixdt=0; remixsid=<...>; remixusid=<...>; remixseenads=1````
 
-If video only available to logged in users or certain profiles
-* Open VK and log in
-* Open browser's dev tools
-* Make a request for any page
-* Copy header "Cookie" (`remixlang=3...`)
-* Paste to variable cookie
+##### *Itch.io*
 
-**TODO**
-* Read links from file on disk
-* Obtain cookie by providing username & password
-* Download youtube videos
-* Add option to provide link to album - parse and download all video links on it
-* Migrate to VK API?
-* Error handling
+``__cfduid=<...>; itchio=<...>``
+
+### **LINK FORMAT**
+* VK: https://vk.com/video-<...>_<...>
+* Itch.io: https://itch.io/bundle/download/<...>
+
+### **BUILDING**
+* `mvn compile`
+* `mvn assembly:single`
